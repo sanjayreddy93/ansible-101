@@ -1,0 +1,14 @@
+- name: User Input playing
+  hosts: local
+  connection: local
+  vars_prompt:
+    - name: game
+      prompt: Your favourite GTA game?
+      private: false
+    - name: player
+      prompt: Your favourite GTA game charecter?
+      private: True
+  tasks:
+    - name: Display Users GTA game choices
+      ansible.builtin.debug:
+        msg: "My favourite GTA game is {{ game }} and my favourite GTA Charecter is {{ player }}"
