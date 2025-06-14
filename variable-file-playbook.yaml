@@ -1,0 +1,9 @@
+- name: Use Variables
+  hosts: local
+  connection: local
+  vars_files:
+  - game.yaml
+  tasks:
+    - name: Print Variables
+      ansible.builtin.debug:
+        msg: "I like playing {{ GAME }}. The Main Protagonists of the Game are {{ CHARECTER1 }}, {{ CHARECTER2 }}, and {{ CHARECTER3 }}"
