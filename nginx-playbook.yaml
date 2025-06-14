@@ -1,0 +1,8 @@
+- name: Install nginx
+  hosts: frontend
+  tasks:
+    - name: Install Nginx server
+      ansible.builtin.package:
+        name:
+          - nginx
+        state: latest
