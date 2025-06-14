@@ -1,0 +1,12 @@
+- name: Use Variables
+  hosts: local
+  connection: local
+  vars:
+    GAME: GTA V
+    CHARECTER1: Micheal
+    CHARECTER2: Franklin
+    CHARECTER3: Trevor
+  tasks:
+    - name: Print Variables
+      ansible.builtin.debug:
+        msg: "I like playing {{ GAME }}. The Main Protagonists of the Game are {{ CHARECTER1 }}, {{ CHARECTER2 }}, and {{ CHARECTER3 }}"
