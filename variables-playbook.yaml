@@ -1,7 +1,7 @@
 - name: Use Variables
   hosts: local
   connection: local
-  vars:
+  vars:  # Global variables. Can be accessed by all the tasks
     GAME: GTA V
     CHARECTER1: Micheal
     CHARECTER2: Franklin

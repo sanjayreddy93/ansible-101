@@ -1,0 +1,20 @@
+- name: Use Variables
+  hosts: local
+  connection: local
+  vars:  # Global variables. Can be accessed by all the tasks
+    DEVELOPER: Rockstar
+  tasks:
+    - name: Print game details
+      vars:  # Task variables. Can be accessed by only this task
+        GAME: GTA V
+        CHARECTER1: Micheal
+        CHARECTER2: Franklin
+        CHARECTER3: Trevor
+      ansible.builtin.debug:
+        msg: "I like playing {{ GAME }}. The Game is developed by {{ DEVELOPER }}. The Main Protagonists of the Game are {{ CHARECTER1 }}, {{ CHARECTER2 }}, and {{ CHARECTER3 }}"
+    - name: Print game details
+      vars:  # Task variables. Can be accessed by only this task
+        GAME: GTA Vice City
+        CHARECTER1: Tommy Vercetti
+      ansible.builtin.debug:
+        msg: "I like playing {{ GAME }}. The Game is developed by {{ DEVELOPER }}. The Main Protagonists of the Game is {{ CHARECTER1 }}"
