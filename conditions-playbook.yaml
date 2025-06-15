@@ -1,17 +1,19 @@
 - name: Ansible conditions
   hosts: local
   connection: local
+  
   vars_prompt:
-    - name: number
-      prompt: Enter the number
+    - name: NUMBER
+      prompt: Enter the NUMBER
+      private: false
 
   tasks:
-    - name: Checking if number is greater than 50
+    - name: Checking if NUMBER is greater than 50
       ansible.builtin.debug:
-        msg: Given {{ number }} is greater than 50
-      when: number > 50
+        msg: "Given {{ NUMBER }} is greater than 50"
+      when: NUMBER | int > 50
 
-    - name: Check if number less than 50
+    - name: Check if NUMBER less than 50
       ansible.builtin.debug:
-        msg: Given {{ number }} is less than 50
-      when: number < 50
+        msg: "Given {{ NUMBER }} is less than 50"
+      when: NUMBER | int < 50
