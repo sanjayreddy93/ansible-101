@@ -1,0 +1,19 @@
+- name: Data types playbook
+  hosts: local
+  connection: local
+  vars:
+    GAME: "GTA"
+    VERSION: 5
+    DEVELOPER: "ROCKSTAR"
+    GAMES:
+      - Liberty City
+      - Vice City Stories
+      - Vice City
+      - Sanandreas
+    CHARECTERS:
+      PLAYERS: "Vance, Tommy, CJ"
+      LOCATION: US
+  tasks:
+    - name: Print Games using Data types
+      ansible.builtin.debug:
+        msg: "I like playing {{ GAME }} {{ VERSION }}. The Games are devloped by {{ DEVELOPER }}. The list of games are {{ GAMES }}. The Main Protagonists and the location of game is {{ CHARECTERS }}"
